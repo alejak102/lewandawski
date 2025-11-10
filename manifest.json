@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "My Custom Script",
+    "version": "1.0",
+    "description": "Run custom JavaScript on a specific page",
+    "permissions": [
+      "activeTab",
+      "webNavigation",
+      "storage",
+      "webRequest",
+      "webRequestBlocking",
+      "<all_urls>"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+      }
+    },
+    "icons": {
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*/*"
+        ],
+        "js": [
+          "background.js"
+        ]
+      }
+    ]
+  }
